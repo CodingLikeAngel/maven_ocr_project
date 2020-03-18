@@ -12,10 +12,12 @@ import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;;
 
-/**
- * Hello world!
- *
- */
+/* Java Ocr recognition Tesseract Integration 
+ * 
+ * 
+ * 
+ * Started by Angel Nieto 18-03-2020 */  
+
 public class App 
 {
     public static void main( String[] args ) throws TesseractException, IOException
@@ -23,9 +25,9 @@ public class App
     	
     	Color_And_Write_Image();
         ITesseract image = new Tesseract();  	
-    	String str = image.doOCR(new File("C:\\Users\\aniet\\Desktop\\prueba\\ipsumProcessed2.png"));
-    
+    	String str = image.doOCR(new File("C:\\Users\\aniet\\Desktop\\prueba\\ipsumProcessed2.png"));  
         System.out.println( "OCR RESULT:");
+        System.out.println( " ");
         System.out.println(str);
     }
     
@@ -43,10 +45,8 @@ public class App
     {
     	BufferedImage img = null;
         img = ImageIO.read(new File("C:\\eclipse-workspace\\maven_ocr_project\\Files\\Test\\ipsum.jpg"));
-    	
         img = resize(img , img.getWidth() *4 , img.getHeight() *2 );
 
-  
             for (int x = 0; x < img.getWidth() ; x++)  {  //- img.getWidth()/2
             for (int y = 0; y < img.getHeight() ; y++) {  //- img.getHeight()/2
                 Color color = new Color(img.getRGB(x, y));
